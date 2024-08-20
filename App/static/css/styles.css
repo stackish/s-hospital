@@ -1,0 +1,315 @@
+/* =================
+
+Start Configuration
+=================
+*/
+
+html,body{
+	height: 100%;
+	margin: 0;
+	max-width: 100%;
+	overflow: hidden;
+}
+
+/* =================
+PAGINATION
+=================
+*/
+#first, #last{
+	width: 60px;
+}
+
+#Btn-add-smartphone{
+	display: none;
+}
+
+/* =================
+NAVBAR
+=================
+*/
+
+#btn-nav{
+	width: 90px;
+	float: right;
+	margin-right: 25px;
+}
+
+
+/* =================
+FOOTER
+=================
+*/
+
+.wrapper{
+	min-height: 100%;
+	margin-bottom: -50px;
+}
+
+#footer,
+.push{
+	height: 50px;
+	font-size: 13px;
+}
+
+
+/* =================
+Patient (add.html)
+=================
+*/
+
+.side-label{
+	width: 50px;
+}
+
+#btn-smartphone{
+	display: none;
+}
+
+
+
+
+
+
+#heart{
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	font-size: 22px;
+}
+
+
+/* ============================================================
+# BASE  
+==============================================================*/
+
+
+#nav-content{
+		text-align: center;
+		color: #fff;
+		margin-left: 25px;
+		}
+
+/* ============================================================
+# LOGIN  
+==============================================================*/
+
+.icon-width{
+	width: 45px;
+}
+
+#card-login{
+	width: 450px;
+}
+
+.login-border{
+	border-top: .4rem solid #007bff;
+	border-radius: 10px;
+
+}
+
+#btn-enter{
+	border-radius: 15px;
+	font-size: 16px;
+}
+
+/* ============================================================
+# 	RESPONSIVE DESIGN  
+==============================================================*/
+
+
+
+
+
+/* ============================================================
+# 	RESPONSIVE DESIGN  	- MOBILE PHONE(1024px)
+==============================================================*/
+
+
+@media(max-width: 1024px) {
+
+
+
+
+
+
+
+
+	/* TABLE */
+
+	.table thead {
+		display: none;
+	}
+
+	.table, .table tbody, .table tr, .table td{
+		display: block;
+		width: 100%;
+	}
+
+	.table tr{
+		margin-bottom: 15px;
+		border:1px solid #111;
+		border-radius: 5px;
+	}
+
+
+	.table td{
+		text-align: right;
+		padding-left: 35%;
+		position: relative;
+		border:1px solid transparent;
+	}
+
+	.table td::before{
+		content: attr(data-label);
+		position: absolute;
+		left: 0;
+		width: 50%;
+		padding-left: 15px;
+		font-weight: bold;
+		text-align: left;
+		
+	}
+
+	.table > thead > tr:first-child {
+		display: none;
+		margin-top:5px;
+	}
+/* background color  in td */
+	#responsive-border {
+		border: 1px solid #a9a9a9;
+	}
+
+	#top-table{
+		background-color: #cfe2ff;
+		color: #111;
+		font-weight: bold;
+	}
+
+	/* Enable scrolling page on responsive */
+
+	body {
+		overflow-y: visible;
+	}
+	/* Button in navbar */
+	#btn-nav{
+		width: 75px;
+	}
+/* footer   */
+	#footer{
+		font-size: 12px;
+	}
+}
+
+
+/* ============================================================
+# 	RESPONSIVE DESIGN  	- MOBILE (500px)
+==============================================================*/
+
+
+@media(max-width:500px) {
+
+	#card-login{
+		width: 95%;
+	}
+
+	#btn-enter{
+		
+		font-size: 12px;
+	}
+/* Hide this <span> in this mode */
+#all-rights{
+	display:none;
+}	
+
+/* fontsize in footer */
+#footer{
+	font-size: 10px;
+}
+
+/* button in navbar */
+#btn-nav{
+  width: 65px;
+  font-size: 12px;
+  margin-right: 15px;
+
+}
+
+#nav-content{
+	font-size:15px;
+	margin-left: 15px
+}
+
+#heart{
+	font-size: 12px;
+}
+.txt-sm{
+	font-size: 12px;
+}
+.txt-md{
+	font-size: 14px;
+}
+
+/*   Time is hidden   */
+#clock{
+	display: none;
+}
+/*   Welcome small font   */
+.welcome{
+	font-size: 12px;
+
+}
+#add-patient{
+	font-size: 12px;
+}
+.btn-action{
+	width: 35px;
+	font-size: 12px;
+
+}
+#pagination, #first, #last{
+	font-size: 12px;
+}
+#first, #last{
+	width: 20px;
+}
+#name,#phone,#email,#age,#gender{
+	font-size: 12px;
+}	
+.modal-title{
+	font-size: 14px;
+}
+/* SweetAlert */
+.swal-title{
+	font-size: 18px;
+}
+.swal-text{
+	font-size: 14px;
+}
+.swal-button{
+	padding: 5px 15px;
+	font-size: 10px;
+}
+
+
+#Btn-add-smartphone{
+	display: inline;
+	width: 40px;
+	font-size: 12px;
+}
+#Btn-add-desktop{
+	display: none;
+}
+
+#btn-smartphone{
+	display: inline;
+
+}
+
+#btn-desktop{
+	display: none;
+}
+
+
+}

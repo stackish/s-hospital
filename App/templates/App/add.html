@@ -1,0 +1,153 @@
+{% extends "App/base.html " %}
+
+<!--Title -->
+{% block title %} Add Patient | Screecher  {% endblock title %}
+
+ {% block navbar-content %}
+ <i class="fas fa-user-plus"></i> &nbsp;&nbsp; Add Patient
+ {% endblock navbar-content %}
+
+<!--Current time-->
+{% block time %}
+     <div class="col-sm">
+        <center>
+            <span style="color:#89cff0" id="clock"></span>
+        </center>
+
+     </div>
+
+{% endblock time %}
+
+{% block nav-btn %}
+<a data-bs-toggle="modal" data-bs-target="#logoutModal" class="btn btn-outline-danger text-light border-light btn-sm" id="btn-nav">Logout</a>
+{% endblock nav-btn %}
+
+
+    # ====================
+    #  PAGE CONTENT
+    # ====================
+<!--Page content -->
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card card-body border-dark text-primary mt-5">
+                
+                <span class="text-center text-uppercase txt-sm">{% block card-title %}fill out the form below {% endblock card-title %}</span>
+               
+
+            </div>
+
+            <!--form-->
+
+            <form {% block form-action %} action="{% url 'add_patient' %}"{% endblock form-action %}  method="POST" enctype="multipart/form-data" class="card p-3 border-dark mt-3">
+                {% csrf_token %}
+
+            <div class="input-group  mb-3">
+                <span class="btn border-secondary bg-light txt-sm side-label"><i class="fas fa-user-alt"></i></span>
+                <input type="text" name="name"  id="name" maxlength="40" class="form-control" placeholder="Patient's name" required {% block value-name %}{% endblock value-name %}>
+            </div>
+
+
+
+            <div class="input-group  mb-3">
+                <span class="btn border-secondary bg-light txt-sm side-label"><i class="fas fa-phone-alt"></i>`</span>
+                <input type="text" name="phone" id="phone" class="form-control" placeholder="Patient's phone" required {% block value-phone %}{% endblock value-phone %}>
+            </div>
+
+
+
+            <div class="input-group  mb-3">
+                <span class="btn border-secondary bg-light txt-sm side-label"><i class="fas fa-envelope"></i></span>
+                <input type="text" name="email" id="email" maxlength="40" class="form-control" placeholder="Patient's email" required {% block value-email %}{% endblock value-email %}>
+            </div>
+
+
+             <div class="input-group  mb-3">
+                <span class="btn border-secondary bg-light txt-sm side-label" style="border-radius: 4px 0px 0px 4px;"><i class="fab fa-creative-commons-by"></i></span>
+                <input type="text" name="age" id="age" class="form-control" maxlength="3" placeholder="Patient's age" required {% block value-age %}{% endblock value-age %}>
+            </div>
+
+
+
+            <div class="input-group  mb-3">
+                <label> <span class="btn border-secondary bg-light txt-sm side-label"><i class="fas fa-child"></i> </span></label>
+
+                <select name="gender" id="gender" class="form-select txt-sm" required {% block value-gender %}{% endblock value-gender %}>
+                    {% block option %}
+                   <option value="" hidden>Select the gender</option> 
+                   {% endblock option %}
+                   <option disabled></option>
+                   <option>M</option>
+                   <option>F</option>
+                   
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <textarea class="form-control txt-sm" name="note" rows="7" maxlength="1000" placeholder="Description is optional...">{% block value-note  %}{% endblock value-note  %}</textarea>
+                
+            </div>
+
+<!-- Desktop and tablet mode (butttons) -->
+<div class="mt-4" style="width: 100%;" id="btn-desktop">
+    
+    <button type="submit" class="btn btn-outline-primary mb-3">
+        {% block desktop %}
+        <i class="fas fa-plus"></i> &nbsp; &nbsp; Add Patient
+        {% endblock desktop %}
+    </button>
+    
+
+    <a href="{% url 'backend' %}" class="btn btn-outline-dark mb-3 ms-2 " style="width: 50px;" title="Back">
+        <i class="fas fa-chevron-left"></i>
+    </a>
+    <button type="reset" class="btn btn-outline-secondary mb-3 ms-2" style="width: 50px;" title="Reset">
+        <i class="fas fa-sync-alt"></i>
+
+    </button>
+</div>
+
+
+<!-- Smartphone mode (butttons) -->
+<div id="btn-smartphone">
+            <div class="d-grid gap-2 mt-3">
+                <button type="submit" class="btn btn-primary btn-sm txt-sm" id="btn-add">
+                {% block btn-content %}   <i class="fas fa-plus"></i> &nbsp; Add {% endblock btn-content %} 
+                </button>
+
+            <a href="{% url 'backend' %}" class="btn btn-dark btn-sm txt-sm"><i class="fas fa-chevron-left"></i>&nbsp; &nbsp; Back</a>
+               <!--Reset Button -->
+            <button type="reset" class="btn btn-secondary btn-sm txt-sm"><i class="fas fa-sync-alt"></i>&nbsp; &nbsp; Reset</button>
+
+            </div>
+
+</div>
+           {% block hidden %} {% endblock hidden %}
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+    <!--Messages from backend-->
+
+
+    {% for message in messages %}
+    {% if message.tags == "error" %}
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
+    <script>
+        var m = "{{message}}";
+        swal("Denied !!", m, "error");
+    </script>
+    {% endif %}
+
+    {% endfor %}
+    <br><br><br><br>
+
+{% endblock content %}
