@@ -44,8 +44,16 @@
     </nav> 
   </header>
 
+
+
+
+
+
+
+
 <!-- content --> 
- 
+
+
 
 {% block content %} {% endblock content %}
 
@@ -59,6 +67,19 @@
     <a href="#" class="text-decoration-none" style="color:#0dcaf0;">by  Screecher Designs</a>
   </div>
 </footer>
+
+<!-- SIDEBAR -->
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="offcanvasRightLabel">Menu</h5>
+<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+</div>
+<div class="offcanvas-body">
+{% block body-sidebar %}{% endblock body-sidebar %}
+</div>
+</div>
+
 
 <!--mODAL-->
 

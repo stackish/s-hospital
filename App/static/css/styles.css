@@ -34,6 +34,12 @@ NAVBAR
 	margin-right: 25px;
 }
 
+#sidebar{
+	float: right;
+	margin-right: 25px;
+	cursor: pointer;
+}
+
 
 /* =================
 FOOTER
