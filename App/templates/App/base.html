@@ -48,13 +48,35 @@
 
 
 
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
 
+<!-- Support Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="fas fa-headset"></i> &nbsp;&nbsp; Support</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form action="" autocomplete="off" class="was-validated">
+        {% csrf_token %}
+      <div class="modal-body">
+          <input type="hidden" value="{{user.get_username}}" name="user">
+      </div>
+    </form>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-sm txt-sm" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary  btn-sm txt-sm">Send </button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <!-- content --> 
-
-
-
 {% block content %} {% endblock content %}
 
 </div>  <!-- End of Wrapper -->
